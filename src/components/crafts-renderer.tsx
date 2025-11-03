@@ -1,5 +1,5 @@
 import CornerBox from "./corner-box";
-import { CodeIcon } from "./icons";
+import { CodeIcon } from "./ui/icons";
 
 export function CraftsRenderer({
   title,

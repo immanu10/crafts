@@ -1,7 +1,10 @@
-import CornerBox from "./components/ui/corner-box";
-import { CraftsRenderer } from "./components/ui/crafts-renderer";
-import { FabShare } from "./components/ui/crafts/fabshare";
+import CornerBox from "./components/corner-box";
+import { CraftsRenderer } from "./components/crafts-renderer";
+import { FabShare } from "./components/crafts/fabshare";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
+
+const craftLink = (filename: string) =>
+  `https://github.com/immanu10/crafts/blob/main/src/components/crafts/${filename}.tsx`;
 
 function App() {
   return (
@@ -17,7 +20,7 @@ function App() {
             </h1>
             <div className="flex items-center gap-2">
               <a
-                href="https://github.com/immanu10/ui"
+                href="https://github.com/immanu10/crafts/"
                 className="p-2 hover:bg-neutral-100 rounded-md transition-all"
               >
                 <GithubIcon className="w-5 h-5" />
@@ -33,7 +36,7 @@ function App() {
         </nav>
         <CraftsRenderer
           title="Share on hover"
-          codeLink="https:github.com/immanu10/ui"
+          codeLink={craftLink("fabshare")}
           className="mt-4"
         >
           <FabShare />

@@ -6,7 +6,7 @@ import {
   LinkedinIcon,
   ShareIcon,
   XIcon,
-} from "../icons";
+} from "../ui/icons";
 
 export function FabShare() {
   const socialButtons = [
