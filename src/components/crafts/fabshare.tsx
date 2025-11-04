@@ -23,9 +23,11 @@ export function FabShare() {
       initial={false}
       className="mx-auto flex items-center rounded-full shadow-lg overflow-hidden cursor-pointer bg-white"
       animate={{ width: expanded ? "fit-content" : "3.5rem" }}
-      onClick={() => setExpanded(!expanded)}
     >
-      <div className="relative w-14 h-14 rounded-full flex items-center justify-center shrink-0">
+      <div
+        className="relative w-14 h-14 rounded-full flex items-center justify-center shrink-0"
+        onClick={() => setExpanded(!expanded)}
+      >
         {/* Share Icon */}
         <motion.div
           initial={false}

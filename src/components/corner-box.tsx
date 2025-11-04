@@ -19,7 +19,7 @@ export default function CornerBox({
   };
 
   return (
-    <div className={`relative border border-neutral-200 p-4 ${className}`}>
+    <div className={`relative border  border-neutral-200 p-4 ${className}`}>
       {/* top-left */}
       <div
         className={`absolute -top-px -left-px border-t border-l ${borderColor}`}
