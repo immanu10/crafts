@@ -15,7 +15,7 @@ export function CraftsRenderer({
   return (
     <CornerBox className={className}>
       <div className="flex items-center justify-between border-b border-neutral-200 py-2">
-        <h2 className="text-lg font-medium">{title}</h2>
+        <h2 className="text-md font-medium">{title}</h2>
 
         <a
           href={codeLink}

@@ -1,5 +1,6 @@
 import CornerBox from "./components/corner-box";
 import { CraftsRenderer } from "./components/crafts-renderer";
+import StocksCarousel from "./components/crafts/carousal-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
 
@@ -12,9 +13,9 @@ function App() {
       <div className="max-w-3xl mx-auto p-4">
         <nav className="sticky top-0  bg-white z-1">
           <CornerBox className="flex items-center justify-between ">
-            <h1 className="text-4xl text-slate-800 font-semibold">
+            <h1 className="text-2xl text-slate-800 font-semibold">
               Crafts
-              <span className="block text-base text-neutral-500">
+              <span className="block text-xs text-neutral-500">
                 by immanu10
               </span>
             </h1>
@@ -35,11 +36,18 @@ function App() {
           </CornerBox>
         </nav>
         <CraftsRenderer
-          title="Share on hover"
+          title="Share Button"
           codeLink={craftLink("fabshare")}
           className="mt-4"
         >
           <FabShare />
+        </CraftsRenderer>
+        <CraftsRenderer
+          title="Carousal Widget"
+          codeLink={craftLink("carousal-widget")}
+          className="mt-4"
+        >
+          <StocksCarousel />
         </CraftsRenderer>
         <CornerBox className="mt-6 h-64 flex items-center justify-center mask-b-from-0">
           <p className="text-2xl text-center">Work in Progress</p>
