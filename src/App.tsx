@@ -1,5 +1,6 @@
 import CornerBox from "./components/corner-box";
 import { CraftsRenderer } from "./components/crafts-renderer";
+import { CardReveal } from "./components/crafts/card-reveal";
 import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
@@ -48,6 +49,13 @@ function App() {
           className="mt-4"
         >
           <CarouselWidget />
+        </CraftsRenderer>
+        <CraftsRenderer
+          title="Card Reveal"
+          codeLink={craftLink("card-reveal")}
+          className="mt-4"
+        >
+          <CardReveal />
         </CraftsRenderer>
         <CornerBox className="mt-6 h-64 flex items-center justify-center mask-b-from-0">
           <p className="text-2xl text-center">Work in Progress</p>
