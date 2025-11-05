@@ -43,8 +43,8 @@ export function TextRoll({
       animate: { y: 30, filter: "blue(4px)" },
     },
     exit: {
-      initial: { y: -30, filter: "blur(4px)", scale: 0 },
-      animate: { y: 0, filter: "blur(0px)", scale: 1 },
+      initial: { y: -30, filter: "blur(4px)" },
+      animate: { y: 0, filter: "blur(0px)" },
     },
   } as const;
 
