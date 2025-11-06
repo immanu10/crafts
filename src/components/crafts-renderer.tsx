@@ -1,21 +1,19 @@
 import CornerBox from "./corner-box";
 import { CodeIcon } from "./ui/icons";
 
-export function CraftsRenderer({
+function CraftsRenderer({
   title,
   codeLink,
   children,
-  className,
 }: {
   title: string;
   codeLink: string;
   children: React.ReactNode;
-  className?: string;
 }) {
   return (
-    <CornerBox className={className}>
+    <>
       <div className="flex items-center justify-between border-b border-neutral-200 py-2">
-        <h2 className="text-md font-medium">{title}</h2>
+        <h2 className="text-md font-medium text-neutral-500">{title}</h2>
 
         <a
           href={codeLink}
@@ -26,6 +24,39 @@ export function CraftsRenderer({
         </a>
       </div>
       <div className="py-6">{children}</div>
-    </CornerBox>
+    </>
+  );
+}
+export function Section({
+  title,
+  items,
+}: {
+  title: string;
+  items: { title: string; link: string; component: React.ReactNode }[];
+}) {
+  return (
+    <>
+      <CornerBox
+        className="mt-6 font-semibold text-lg"
+        showBorders={{ bottom: false, left: true, right: true, top: true }}
+      >
+        {title}
+      </CornerBox>
+      {items.map((item, index) => (
+        <CornerBox
+          key={item.title}
+          showBorders={{
+            top: true,
+            left: true,
+            right: true,
+            bottom: index === items.length - 1, // Only last has bottom border
+          }}
+        >
+          <CraftsRenderer title={item.title} codeLink={item.link}>
+            {item.component}
+          </CraftsRenderer>
+        </CornerBox>
+      ))}
+    </>
   );
 }

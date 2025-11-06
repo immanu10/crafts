@@ -1,13 +1,31 @@
 import CornerBox from "./components/corner-box";
-import { CraftsRenderer } from "./components/crafts-renderer";
+import { Section } from "./components/crafts-renderer";
 import { CardReveal } from "./components/crafts/card-reveal";
 import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
+import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
 
 const craftLink = (filename: string) =>
   `https://github.com/immanu10/crafts/blob/main/src/components/crafts/${filename}.tsx`;
 
+const uiCrafts = [
+  {
+    title: "Share Button",
+    link: craftLink("fabshare"),
+    component: <FabShare />,
+  },
+  {
+    title: "Carousel Widget",
+    link: craftLink("carousel-widget"),
+    component: <CarouselWidget />,
+  },
+  {
+    title: "Card Reveal",
+    link: craftLink("card-reveal"),
+    component: <CardReveal />,
+  },
+];
 function App() {
   return (
     <div className="h-screen ">
@@ -36,27 +54,18 @@ function App() {
             </div>
           </CornerBox>
         </nav>
-        <CraftsRenderer
-          title="Share Button"
-          codeLink={craftLink("fabshare")}
-          className="mt-4"
-        >
-          <FabShare />
-        </CraftsRenderer>
-        <CraftsRenderer
-          title="Carousel Widget"
-          codeLink={craftLink("carousel-widget")}
-          className="mt-4"
-        >
-          <CarouselWidget />
-        </CraftsRenderer>
-        <CraftsRenderer
-          title="Card Reveal"
-          codeLink={craftLink("card-reveal")}
-          className="mt-4"
-        >
-          <CardReveal />
-        </CraftsRenderer>
+        <Section title="Interactive UI" items={uiCrafts} />
+
+        <Section
+          title="DSA in UI"
+          items={[
+            {
+              title: "Two pointer - is palindrome",
+              link: craftLink("is-palindrome"),
+              component: <AnimatedPalindromeChecker />,
+            },
+          ]}
+        />
         <CornerBox className="mt-6 h-64 flex items-center justify-center mask-b-from-0">
           <p className="text-2xl text-center">Work in Progress</p>
         </CornerBox>

@@ -10,7 +10,7 @@ export function CardReveal() {
     <div className="py-2 pl-4 pr-2 border-2 border-slate-300 rounded-2xl flex items-center justify-between max-w-sm mx-auto">
       <div
         className={cn(
-          "font-semibold text-xl tracking-wider flex gap-4 items-center",
+          "font-medium text-xl tracking-wider flex gap-4 items-center",
           show && "shimmer-bg"
         )}
       >
