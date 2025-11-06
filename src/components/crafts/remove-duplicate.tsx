@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "../../util";
 
 export default function RemoveDuplicatesVisual() {
-  const [rawInput, setRawInput] = useState("1,1,1,1,2,4");
+  const [rawInput, setRawInput] = useState("1,1,1,2,4");
   const [arr, setArr] = useState<number[]>([]);
   const [i, setI] = useState<number | null>(null);
   const [j, setJ] = useState<number | null>(null);
@@ -93,19 +93,19 @@ export default function RemoveDuplicatesVisual() {
 
   return (
     <div className="max-w-xl mx-auto">
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2">
         <input
           type="text"
           value={rawInput}
           onChange={(e) => !isRunning && setRawInput(e.target.value)}
-          placeholder="Enter commas separated numbers..."
+          placeholder="Enter numbers - (eg., 1,2,3,3,4)"
           className="flex-1 border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-slate-200"
         />
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <button
             onClick={startAnimation}
             disabled={isRunning || parseInput(rawInput).length === 0}
-            className="p-2 rounded bg-blue-600 text-white disabled:bg-gray-400"
+            className="flex-1 p-2 rounded bg-blue-600 text-white disabled:bg-gray-400"
           >
             {isRunning
               ? "Running..."
@@ -116,7 +116,7 @@ export default function RemoveDuplicatesVisual() {
           <button
             onClick={resetVisualization}
             disabled={isRunning}
-            className="p-2 rounded bg-gray-100 border border-gray-300"
+            className="flex-1 p-2 rounded bg-gray-100 border border-gray-300"
           >
             Reset
           </button>
@@ -129,7 +129,7 @@ export default function RemoveDuplicatesVisual() {
           <div
             key={idx}
             className={cn(
-              "relative w-12 h-12 border-2 flex items-center justify-center rounded-md text-lg font-bold transition-all",
+              "relative min-w-12 h-12 border-2 flex items-center justify-center rounded-md text-lg font-bold transition-all",
               idx === i
                 ? "bg-green-300 border-green-400"
                 : idx === j
