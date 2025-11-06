@@ -4,6 +4,7 @@ import { CardReveal } from "./components/crafts/card-reveal";
 import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
+import RemoveDuplicatesVisual from "./components/crafts/remove-duplicate";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
 
 const craftLink = (filename: string) =>
@@ -60,9 +61,18 @@ function App() {
           title="DSA in UI"
           items={[
             {
-              title: "Two pointer - is palindrome",
+              title: "Two Pointers: Palindrome Checker",
+              subtext:
+                "Type 1: Oposite ends - Start one pointer at the beginning and one at the end. Move them toward each other. (e.g., pair sum in sorted array, palindrome checking)",
               link: craftLink("is-palindrome"),
               component: <AnimatedPalindromeChecker />,
+            },
+            {
+              title: "Two Pointers:  Remove duplicate",
+              subtext:
+                "Type 2: Fast and slow - One pointer moves faster than the other. The slow pointer marks the position of the next unique element. (e.g., detect cycles, removing duplicates)",
+              link: craftLink("remove-duplicate"),
+              component: <RemoveDuplicatesVisual />,
             },
           ]}
         />

@@ -4,10 +4,12 @@ import { CodeIcon } from "./ui/icons";
 function CraftsRenderer({
   title,
   codeLink,
+  subtext,
   children,
 }: {
   title: string;
   codeLink: string;
+  subtext?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -23,6 +25,7 @@ function CraftsRenderer({
           <span>Code</span>
         </a>
       </div>
+      {subtext && <p className="text-sm text-neutral-500 mt-4">{subtext}</p>}
       <div className="py-6">{children}</div>
     </>
   );
@@ -32,7 +35,12 @@ export function Section({
   items,
 }: {
   title: string;
-  items: { title: string; link: string; component: React.ReactNode }[];
+  items: {
+    title: string;
+    subtext?: string;
+    link: string;
+    component: React.ReactNode;
+  }[];
 }) {
   return (
     <>
@@ -52,7 +60,11 @@ export function Section({
             bottom: index === items.length - 1, // Only last has bottom border
           }}
         >
-          <CraftsRenderer title={item.title} codeLink={item.link}>
+          <CraftsRenderer
+            title={item.title}
+            codeLink={item.link}
+            subtext={item.subtext}
+          >
             {item.component}
           </CraftsRenderer>
         </CornerBox>
