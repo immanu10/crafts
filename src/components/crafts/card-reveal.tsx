@@ -7,10 +7,10 @@ import { cn } from "../../util";
 export function CardReveal() {
   const [show, setShow] = useState(false);
   return (
-    <div className="py-2 pl-4 pr-2 border-2 border-slate-300 rounded-2xl flex items-center justify-between max-w-sm mx-auto">
+    <div className="p-2 md:px-4 border-2 border-slate-300 rounded-2xl flex items-center justify-between max-w-sm mx-auto">
       <div
         className={cn(
-          "font-medium text-xl tracking-wider flex gap-4 items-center",
+          "font-medium text-xl tracking-widest flex gap-3",
           show && "shimmer-bg"
         )}
       >
@@ -24,7 +24,7 @@ export function CardReveal() {
             ease: "easeOut",
           }}
         >
-          {show ? "3934" : "xxxx"}
+          {show ? "3934" : "****"}
         </TextRoll>
         <TextRoll
           className="overflow-clip w-14"
@@ -35,7 +35,7 @@ export function CardReveal() {
             ease: "easeOut",
           }}
         >
-          {show ? "5783" : "xxxx"}
+          {show ? "5783" : "****"}
         </TextRoll>
         <span>7689</span>
       </div>

@@ -84,9 +84,9 @@ export default function AnimatedPalindromeChecker() {
               <div className="flex flex-col items-center" key={index}>
                 <span
                   className={cn(
-                    "px-2",
-                    index === left && "bg-green-300  rounded",
-                    index === right && " bg-red-300  rounded"
+                    "px-2 transition-all",
+                    index === left && "bg-green-400 text-white  rounded",
+                    index === right && " bg-red-400 text-white  rounded"
                   )}
                 >
                   {char}

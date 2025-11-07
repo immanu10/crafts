@@ -5,6 +5,7 @@ import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
 import RemoveDuplicatesVisual from "./components/crafts/remove-duplicate";
+import SlidingWindowVisualizer from "./components/crafts/sliding-window";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
 
 const craftLink = (filename: string) =>
@@ -73,6 +74,13 @@ function App() {
                 "Type 2: Fast and slow - One pointer moves faster than the other. The slow pointer marks the position of the next unique element. (e.g., detect cycles, removing duplicates)",
               link: craftLink("remove-duplicate"),
               component: <RemoveDuplicatesVisual />,
+            },
+            {
+              title: "Sliding Window: Max Sum Subarray of Size K",
+              subtext:
+                "A window of fixed size 'k' slides over the array to compute sums efficiently by adding the new element and removing the element going out of the window.",
+              link: craftLink("sliding-window"),
+              component: <SlidingWindowVisualizer />,
             },
           ]}
         />
