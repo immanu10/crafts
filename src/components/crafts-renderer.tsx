@@ -15,7 +15,9 @@ function CraftsRenderer({
   return (
     <>
       <div className="flex items-center justify-between border-b border-neutral-200 py-2">
-        <h2 className="text-md font-medium text-neutral-500">{title}</h2>
+        <h2 className="text-md font-medium text-neutral-500 max-sm:max-w-52">
+          {title}
+        </h2>
 
         <a
           href={codeLink}

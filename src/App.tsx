@@ -4,6 +4,7 @@ import { CardReveal } from "./components/crafts/card-reveal";
 import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
+import StockProfitVisualizer from "./components/crafts/kadanes-algo";
 import RemoveDuplicatesVisual from "./components/crafts/remove-duplicate";
 import SlidingWindowVisualizer from "./components/crafts/sliding-window";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
@@ -64,23 +65,26 @@ function App() {
             {
               title: "Two Pointers: Palindrome Checker",
               subtext:
-                "Type 1: Oposite ends - Start one pointer at the beginning and one at the end. Move them toward each other. (e.g., pair sum in sorted array, palindrome checking)",
+                "Type 1: Oposite ends (e.g., pair sum in sorted array, palindrome checking)",
               link: craftLink("is-palindrome"),
               component: <AnimatedPalindromeChecker />,
             },
             {
               title: "Two Pointers:  Remove duplicate",
               subtext:
-                "Type 2: Fast and slow - One pointer moves faster than the other. The slow pointer marks the position of the next unique element. (e.g., detect cycles, removing duplicates)",
+                "Type 2: Fast and slow (e.g., detect cycles, removing duplicates)",
               link: craftLink("remove-duplicate"),
               component: <RemoveDuplicatesVisual />,
             },
             {
               title: "Sliding Window: Max Sum Subarray of Size K",
-              subtext:
-                "A window of fixed size 'k' slides over the array to compute sums efficiently by adding the new element and removing the element going out of the window.",
               link: craftLink("sliding-window"),
               component: <SlidingWindowVisualizer />,
+            },
+            {
+              title: "Kadane's Algorithm",
+              link: craftLink("kadanes-algo"),
+              component: <StockProfitVisualizer />,
             },
           ]}
         />
