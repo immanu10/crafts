@@ -7,37 +7,37 @@ import { cn } from "../../util";
 export function CardReveal() {
   const [show, setShow] = useState(false);
   return (
-    <div className="p-2 md:px-4 border-2 border-slate-300 rounded-2xl flex items-center justify-between max-w-sm mx-auto">
+    <div className="p-2 border-2 border-slate-300 rounded-2xl flex items-center gap-4 max-w-sm w-fit mx-auto">
       <div
         className={cn(
-          "font-medium text-xl tracking-widest flex gap-3",
+          "font-medium text-lg tracking-widest flex gap-2",
           show && "shimmer-bg"
         )}
       >
-        <span>4958</span>
+        <span className="w-12">4958</span>
         <TextRoll
-          className="overflow-clip w-14"
+          className="w-12 overflow-clip"
           key={show ? "show1" : "hide1"}
           getEnterDelay={(i) => i * 0.05}
-          getExitDelay={(i) => i * 0.02 + 0.01}
+          getExitDelay={(i) => i * 0.05 + 0.1}
           transition={{
             ease: "easeOut",
           }}
         >
-          {show ? "3934" : "****"}
+          {show ? "3934" : "xxxx"}
         </TextRoll>
         <TextRoll
-          className="overflow-clip w-14"
+          className="w-12 overflow-clip"
           key={show ? "show2" : "hide2"}
           getEnterDelay={(i) => i * 0.05}
-          getExitDelay={(i) => i * 0.02 + 0.01}
+          getExitDelay={(i) => i * 0.05 + 0.1}
           transition={{
             ease: "easeOut",
           }}
         >
-          {show ? "5783" : "****"}
+          {show ? "5783" : "xxxx"}
         </TextRoll>
-        <span>7689</span>
+        <span className="w-12">7689</span>
       </div>
       <div
         className={cn(

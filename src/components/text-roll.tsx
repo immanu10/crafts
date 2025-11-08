@@ -29,7 +29,7 @@ export type TextRollProps = {
 
 export function TextRoll({
   children,
-  duration = 0.5,
+  duration = 0.6,
   getEnterDelay = (i) => i * 0.1,
   getExitDelay = (i) => i * 0.1 + 0.2,
   className,
@@ -40,10 +40,10 @@ export function TextRoll({
   const defaultVariants = {
     enter: {
       initial: { y: 0, filter: "blue(0px)" },
-      animate: { y: 30, filter: "blue(4px)" },
+      animate: { y: 60, filter: "blue(10px)" },
     },
     exit: {
-      initial: { y: -30, filter: "blur(4px)" },
+      initial: { y: -60, filter: "blur(10px)" },
       animate: { y: 0, filter: "blur(0px)" },
     },
   } as const;
