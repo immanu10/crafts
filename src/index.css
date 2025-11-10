@@ -21,7 +21,7 @@
       rgb(255, 255, 255),
       transparent 100%
     );
-    animation: shimmer-move 1.4s ease-out forwards;
+    animation: shimmer-move 1.6s ease-out forwards;
   }
 
   @keyframes shimmer-move {
