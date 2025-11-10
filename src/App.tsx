@@ -7,6 +7,7 @@ import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
 import StockProfitVisualizer from "./components/crafts/kadanes-algo";
 import RemoveDuplicatesVisual from "./components/crafts/remove-duplicate";
 import SlidingWindowVisualizer from "./components/crafts/sliding-window";
+import { TabMotion } from "./components/crafts/tab-motion";
 import { GithubIcon, LinkedinIcon } from "./components/ui/icons";
 
 const craftLink = (filename: string) =>
@@ -27,6 +28,11 @@ const uiCrafts = [
     title: "Card Reveal",
     link: craftLink("card-reveal"),
     component: <CardReveal />,
+  },
+  {
+    title: "Tab Motion",
+    link: craftLink("tab-motion"),
+    component: <TabMotion />,
   },
 ];
 function App() {
