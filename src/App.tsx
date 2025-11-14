@@ -1,6 +1,7 @@
 import CornerBox from "./components/corner-box";
 import { Section } from "./components/crafts-renderer";
 import { CardReveal } from "./components/crafts/card-reveal";
+import { CarousalSlider } from "./components/crafts/carousal-slider";
 import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
@@ -33,6 +34,11 @@ const uiCrafts = [
     title: "Tab Motion",
     link: craftLink("tab-motion"),
     component: <TabMotion />,
+  },
+  {
+    title: "Carousel Slider - [WIP]",
+    link: craftLink("carousal-slider"),
+    component: <CarousalSlider />,
   },
 ];
 function App() {
