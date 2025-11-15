@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { cn } from "../../util";
 import { motion } from "motion/react";
+import { ChevronIcon } from "../ui/icons";
 
 const slides = [
   {
@@ -24,12 +25,12 @@ const slides = [
     url: "yuvraj",
   },
   {
-    id: 5,
-    url: "dhoni",
-  },
-  {
     id: 6,
     url: "raina",
+  },
+  {
+    id: 5,
+    url: "dhoni",
   },
   {
     id: 7,
@@ -51,7 +52,6 @@ const slides = [
 export function CarousalSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
-  const scrolEndTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
   const scrollToIndex = (i: number) => {
     const container = containerRef.current;
@@ -87,32 +87,19 @@ export function CarousalSlider() {
     }
   };
 
-  const handleScrollEnd = () => {
-    if (scrolEndTimer.current) clearTimeout(scrolEndTimer.current);
-
-    scrolEndTimer.current = setTimeout(() => {
-      scrollToIndex(index);
-    }, 100);
-  };
-
   return (
-    <div className="relative mx-auto">
+    <div className="relative bg-linear-to-r from-orange-400/50 via-white to-green-500/50 mask-x-from-90%">
       <button
-        disabled={index === 0}
-        className={cn(
-          "absolute inset-y-1/2 left-0 w-8 h-8 bg-neutral-200 text-neutral-500 text-xl rounded-full flex justify-center items-center font-medium",
-          index === 0 && "opacity-50"
-        )}
+        className={cn("absolute left-0 inset-y-0 w-8 cursor-pointer z-10")}
         onClick={prevSlide}
-      >{`<`}</button>
+      >
+        <ChevronIcon className={cn("text-black")} />
+      </button>
       <div
         ref={containerRef}
         onScroll={() => {
           handleScroll();
-          handleScrollEnd();
         }}
-        onMouseUp={handleScrollEnd}
-        onTouchEnd={handleScrollEnd}
         className="w-full flex items-center scroll-smooth overflow-x-scroll px-[calc(50%-72px)] no-scrollbar"
       >
         {slides.map((item, i) => {
@@ -121,32 +108,45 @@ export function CarousalSlider() {
             <motion.div
               key={item.id}
               animate={{
-                scale: isActive ? 1 : 0.8,
+                scale: isActive ? 1.2 : 1,
                 filter: isActive ? "blur(0px)" : "blur(1px)",
+                opacity: isActive ? 1 : 0.8,
               }}
               transition={{
                 ease: "easeInOut",
                 duration: 0.3,
               }}
-              className="shrink-0 w-36 h-36 rounded-lg"
+              className="shrink-0 w-36 h-36 relative"
             >
               <img
                 src={`/crafts/assets/${item.url}-removebg-preview.png`}
                 alt=""
                 className="w-full h-full object-fill select-none pointer-events-none"
               />
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={
+                  isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="absolute bottom-5 left-1/2 -translate-x-1/2 uppercase z-10 text-white font-bold text-xl select-none"
+                style={{
+                  textShadow:
+                    "0px 2px 3px rgba(0,0,0,0.6), 0px 4px 6px rgba(0,0,0,0.4)",
+                }}
+              >
+                {item.url}
+              </motion.h1>
             </motion.div>
           );
         })}
       </div>
       <button
-        disabled={index === slides.length - 1}
-        className={cn(
-          "absolute inset-y-1/2 right-0 w-8 h-8 bg-neutral-200 text-neutral-500 text-xl rounded-full flex justify-center items-center font-medium ",
-          index === slides.length - 1 && "opacity-50"
-        )}
+        className={cn("absolute right-0 inset-y-0 w-8 cursor-pointer z-10 ")}
         onClick={nextSlide}
-      >{`>`}</button>
+      >
+        <ChevronIcon className={cn("text-black rotate-180")} />
+      </button>
     </div>
   );
 }

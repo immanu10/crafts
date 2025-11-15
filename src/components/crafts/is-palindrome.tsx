@@ -80,7 +80,7 @@ export default function AnimatedPalindromeChecker() {
       <div className="flex justify-center gap-2 mt-6 text-lg font-mono flex-wrap">
         {text.split("").map((char, index) => {
           return (
-            <>
+            <div key={index}>
               <div className="flex flex-col items-center" key={index}>
                 <span
                   className={cn(
@@ -105,7 +105,7 @@ export default function AnimatedPalindromeChecker() {
                   <span className="h-4"></span>
                 )}
               </div>
-            </>
+            </div>
           );
         })}
       </div>
