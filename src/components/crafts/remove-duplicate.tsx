@@ -105,7 +105,7 @@ export default function RemoveDuplicatesVisual() {
           <button
             onClick={startAnimation}
             disabled={isRunning || parseInput(rawInput).length === 0}
-            className="flex-1 p-2 rounded bg-blue-600 text-white disabled:bg-gray-400"
+            className="flex-1 p-2 rounded bg-blue-600 text-sm font-semibold text-white disabled:bg-gray-400"
           >
             {isRunning
               ? "Running..."
@@ -116,7 +116,7 @@ export default function RemoveDuplicatesVisual() {
           <button
             onClick={resetVisualization}
             disabled={isRunning}
-            className="flex-1 p-2 rounded bg-gray-100 border border-gray-300"
+            className="flex-1 p-2 rounded bg-gray-100 border text-sm border-gray-300"
           >
             Reset
           </button>

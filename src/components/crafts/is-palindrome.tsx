@@ -64,7 +64,8 @@ export default function AnimatedPalindromeChecker() {
         <button
           onClick={startAnimation}
           disabled={isAnimating}
-          className=" bg-blue-600 text-white px-2 py-1 rounded disabled:bg-gray-400"
+          // #1447e6
+          className=" bg-blue-600 font-semibold text-sm text-white px-2 py-1 rounded disabled:bg-gray-400"
         >
           {isAnimating ? "Checking..." : "Check"}
         </button>

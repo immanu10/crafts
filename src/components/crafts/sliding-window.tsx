@@ -87,7 +87,7 @@ export default function SlidingWindowVisualizer() {
         <button
           onClick={showReset ? handleReset : handleNext}
           className={cn(
-            "flex-1 bg-blue-600 text-white py-2 px-4 rounded disabled:bg-gray-400",
+            "flex-1 bg-blue-600 text-sm font-semibold text-white py-2 px-4 rounded disabled:bg-gray-400",
             showReset && "bg-gray-400"
           )}
         >

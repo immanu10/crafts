@@ -35,11 +35,6 @@ const uiCrafts = [
     link: craftLink("tab-motion"),
     component: <TabMotion />,
   },
-  {
-    title: "Carousel Slider - [WIP]",
-    link: craftLink("carousal-slider"),
-    component: <CarousalSlider />,
-  },
 ];
 function App() {
   return (
@@ -70,7 +65,7 @@ function App() {
           </CornerBox>
         </nav>
         <Section title="Interactive UI" items={uiCrafts} />
-
+        <div className="my-16 border-t border-gray-200" />
         <Section
           title="DSA in UI"
           items={[
