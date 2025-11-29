@@ -1,7 +1,6 @@
 import CornerBox from "./components/corner-box";
 import { Section } from "./components/crafts-renderer";
 import { CardReveal } from "./components/crafts/card-reveal";
-import { CarousalSlider } from "./components/crafts/carousal-slider";
 import { CarouselWidget } from "./components/crafts/carousel-widget";
 import { FabShare } from "./components/crafts/fabshare";
 import AnimatedPalindromeChecker from "./components/crafts/is-palindrome";
